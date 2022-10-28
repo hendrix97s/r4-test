@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
@@ -42,10 +43,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  ProductRepository $repository
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(ProductRepository $repository)
     {
         //
     }
@@ -53,10 +54,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  ProductRepository $reposit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(ProductRepository $repository)
     {
         //
     }
@@ -65,10 +66,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateProductRequest  $request
-     * @param  \App\Models\Product  $product
+     * @param  ProductRepository $reposit
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(UpdateProductRequest $request, ProductRepository $repository)
     {
         //
     }
@@ -76,10 +77,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  ProductRepository $reposit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(ProductRepository $repository)
     {
         //
     }

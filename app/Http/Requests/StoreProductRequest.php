@@ -23,8 +23,10 @@ class StoreProductRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'category_uuid' => 'required|uuid|exists:categories,uuid',
+        'name'          => 'required|string',
+        'image'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ];
     }
 }
