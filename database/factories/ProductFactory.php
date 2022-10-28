@@ -20,7 +20,8 @@ class ProductFactory extends Factory
         return [
           'category_id' => Category::factory(),
           'name'        => $this->faker->name,
-          'image'       => $this->faker->imageUrl(),
+          'image_url'   => $this->faker->imageUrl(),
+          'image_path'  => '/images/' . $this->faker->image(),
         ];
     }
 }

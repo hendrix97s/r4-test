@@ -13,7 +13,8 @@ class Product extends Model
     protected $fillable = [
       'category_id',
       'name',
-      'image',
+      'image_url',
+      'image_path'
     ];
 
     protected $append = [

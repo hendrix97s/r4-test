@@ -6,28 +6,32 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use App\Repositories\ProductRepository;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param ProductRepository $repository
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ProductRepository $repository)
     {
-        //
+      $response = $repository->paginate();
+      return response()->json($response);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProductRequest  $request
+     * @param ProductService $service
+     * @param  StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request)
+    public function store(StoreProductRequest $request, ProductService $service)
     {
-        //
+      // $response = $repository->create($request->validated());
+      // return response()->json($response);
     }
 
     /**

@@ -31,11 +31,24 @@ return [
     'disks' => [
 
         'local' => [
+          'driver' => 'local',
+          'root' => storage_path('app'),
+          'throw' => false,
+        ],
+        'category' => [
+          'driver' => 'local',
+          'root' => storage_path('app/public/category'),
+          'url' => env('APP_URL').'/storage/category',
+          'visibility' => 'public',
+          'throw' => false,
+        ],
+        'product' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path('app/public/product'),
+            'url' => env('APP_URL').'/storage/product',
+            'visibility' => 'public',
             'throw' => false,
         ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

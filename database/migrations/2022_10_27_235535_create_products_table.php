@@ -18,7 +18,8 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('category_id')->constrained();
             $table->string('name');
-            $table->string('image');
+            $table->string('image_url');
+            $table->string('image_path');
             $table->timestamps();
         });
     }
