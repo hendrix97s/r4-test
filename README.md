@@ -33,6 +33,7 @@ subir para github e nos enviar repositório.
 * Execute o comando `./vendor/bin/sail up -d`
 * Execute o comando `./vendor/bin/sail php artisan key:generate`
 * Execute o comando `./vendor/bin/sail php artisan migrate:fresh --seed`
+* Execute o comando `./vendor/bin/sail storage:link`
 
 ### Acessando o projeto
 

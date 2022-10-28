@@ -8,15 +8,18 @@ use Tests\TestCase;
 
 class CategoryTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $response = $this->get('/');
+  use RefreshDatabase;
 
-        $response->assertStatus(200);
-    }
+  public function setUp(): void
+  {
+    parent::setUp();
+  }
+
+
+  public function testCategoryIndex()
+  {
+    $this->login();
+    $response = $this->get(route('categories.index'));
+    $response->assertStatus(200);
+  }
 }
