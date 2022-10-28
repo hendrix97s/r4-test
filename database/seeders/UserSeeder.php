@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\User;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CategorySeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +16,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-      Category::factory(5)->create();
+      User::factory()->create([
+        'name' => 'Joeh Doe',
+        'email' => 'joeh.doe@test.com',
+      ]);
     }
 }
