@@ -14,12 +14,11 @@ return [
     | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     |
     */
-
     'paths' => ['sanctum/csrf-cookie', 'auth/is-logged-in', 'login', 'logout', 'api/*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
 
     'allowed_origins_patterns' => [],
 

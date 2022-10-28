@@ -16,10 +16,10 @@ class AuthenticateController extends Controller
       $credentials = $request->validated();
       $user = User::where('email', $credentials['email'])->first();
       if(!$user) 
-        return response()->json(['message' => 'User not found'], 404);
+        return response()->json(['message' => 'Unauthorized'], 401);
       
       if(!auth()->attempt($credentials))
-        return response()->json(['message' => 'Invalid credentials'], 401);
+        return response()->json(['message' => 'Unauthorized'], 401);
   
       // registra ultimo acesso
       return response()->json([
