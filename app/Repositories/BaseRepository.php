@@ -29,7 +29,7 @@ class BaseRepository
     return $this->model->find($id);
   }
 
-  public function findByUUid($uuid)
+  public function findByUuid($uuid)
   {
     return $this->model->where('uuid', $uuid)->first();
   }

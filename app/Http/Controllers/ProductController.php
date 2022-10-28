@@ -30,8 +30,9 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request, ProductService $service)
     {
-      // $response = $repository->create($request->validated());
-      // return response()->json($response);
+      $data = $request->validated();
+      $response = $service->store($data);
+      return response()->json($response);
     }
 
     /**
@@ -40,21 +41,24 @@ class ProductController extends Controller
      * @param  ProductRepository $repository
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductRepository $repository)
+    public function show(string $uuid, ProductRepository $repository)
     {
-        //
+      $response = $repository->findByUuid($uuid);
+      return response()->json($response);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProductRequest  $request
+     * @param  UpdateProductRequest  $request
      * @param  ProductRepository $reposit
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, ProductRepository $repository)
+    public function update(UpdateProductRequest $request, ProductService $service)
     {
-        //
+      $data = $request->validated();
+      $response = $service->update($request->uuid, $data);
+      return response()->json($response);
     }
 
     /**
@@ -63,8 +67,9 @@ class ProductController extends Controller
      * @param  ProductRepository $reposit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductRepository $repository)
+    public function destroy(string $uuid, ProductRepository $repository)
     {
-        //
+      $response = $repository->deleteByUuid($uuid);
+      return response()->json($response);
     }
 }

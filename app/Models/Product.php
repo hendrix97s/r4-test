@@ -14,7 +14,7 @@ class Product extends Model
       'category_id',
       'name',
       'image_url',
-      'image_path'
+      'image'
     ];
 
     protected $append = [

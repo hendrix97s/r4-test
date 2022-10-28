@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\CategoryRepository;
 use App\Repositories\ProductRepository;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;

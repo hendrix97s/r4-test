@@ -6,6 +6,6 @@ class ProdutoFacade
 {
   public static function getFacadeAccessor()
   {
-    return 'ProductFacade';
+    return 'ProductRepository';
   }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained();
             $table->string('name');
             $table->string('image_url');
-            $table->string('image_path');
+            $table->string('image');
             $table->timestamps();
         });
     }

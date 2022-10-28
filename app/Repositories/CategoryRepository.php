@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Models\Product;
+use App\Models\Category;
 
 class CategoryRepository extends BaseRepository
 {
   public function __construct()
   {
-    parent::__construct(Product::class);
+    parent::__construct(Category::class);
   }
 }

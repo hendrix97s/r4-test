@@ -10,8 +10,13 @@ class ImageService
   {
     $storage = Storage::disk($disk)->putFile('', $image);
     return [
-      'path' => $storage,
-      'url'  => asset(Storage::disk($disk)->url($storage)),
+      'image' => $storage,
+      'image_url'  => asset(Storage::disk($disk)->url($storage)),
     ];
+  }
+
+  public function delete($image, string $disk)
+  {
+    return Storage::disk($disk)->delete($image);
   }
 }
