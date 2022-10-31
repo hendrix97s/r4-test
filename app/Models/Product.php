@@ -17,9 +17,9 @@ class Product extends Model
       'image'
     ];
 
-    protected $append = [
-      'category_uuid',
+    protected $appends = [
       'category_name',
+      'category_uuid',
     ];
 
     protected $hidden = [

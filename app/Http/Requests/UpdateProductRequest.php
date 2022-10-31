@@ -23,10 +23,10 @@ class UpdateProductRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-          'category_uuid' => 'sometimes|uuid|exists:categories,uuid',
-          'name'          => 'sometimes|string',
-          'image'         => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ];
+      return [
+        'category_uuid' => 'required|uuid|exists:categories,uuid',
+        'name'          => 'required|string',
+        'image'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ];
     }
 }

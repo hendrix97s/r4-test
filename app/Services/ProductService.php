@@ -23,7 +23,8 @@ class ProductService
 
   public function update(string $uuid, array $data)
   {
-    $product = (new ProductRepository())->findByUuid($uuid);
+    $repository = new ProductRepository();
+    $product = $repository->findByUuid($uuid);
     if(!$product) abort(404);
 
     $this->getCategoryId($data);
